@@ -1,1 +1,1 @@
-ls -l . | egrep -c '^-'
+find . | wc -l
