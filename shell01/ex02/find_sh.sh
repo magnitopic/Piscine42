@@ -1,2 +1,2 @@
 #!/usr/bin/env zsh
-find . -type f -iname "*.sh" -execdir sh -c 'printf "%s\n" "${0%.*}"' {} ';'
+find . -type f -name "*.sh" | xargs basename -s .sh
