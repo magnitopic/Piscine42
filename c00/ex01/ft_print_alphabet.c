@@ -6,13 +6,11 @@
 /*   By: alaparic <alaparic@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 16:53:56 by alaparic          #+#    #+#             */
-/*   Updated: 2022/07/10 17:15:15 by alaparic         ###   ########.fr       */
+/*   Updated: 2022/07/10 17:24:23 by alaparic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
-#include <string.h>
 
 void	ft_print_alphabet(void)
 {
