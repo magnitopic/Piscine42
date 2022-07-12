@@ -12,51 +12,31 @@
 
 #include <unistd.h>
 
-char	changeValues(char one, char 2, int flag)
+void	ft_putchar(char c)
 {
-	if (flag)
-	{
-
-	}
-	else
-	{
-		if nums[3] == '9':
-			nums[2] + 1;
-			nums[3]='0';
-		else
-			nums[3] + 1;
-	}
+	write(1, &c, 1);
 }
 
 void	ft_print_comb2(void)
 {
-	int	nums[4];
+	int		n1;
+	int		n2;
 
-	nums[0]='0';
-	nums[1]='0';
-	nums[2]='0';
-	nums[3]='1';
-	while (nums[0] < '9' && nums[1] < '8')
+	n1 = 0;
+	while (n1 <= 98)
 	{
-		// y = x + 1;
-		changeValues(nums[2], nums[3], 1);
-		// define in function
-		while (nums[2] < '9' && nums[3] < '9')
+		n2 = n1 + 1;
+		while (n2 <= 99)
 		{
-			write(1, &nums[0], 1);
-			write(1, &nums[1], 1);
-			write(1, ' ', 1);
-			write(1, &nums[2], 1);
-			write(1, &nums[3], 1);
-			write(1, ", ", 2);
-			changeValues(nums[2], nums[3], 0);
+			ft_putchar((n1 / 10) + 48);
+			ft_putchar((n1 % 10) + 48);
+			ft_putchar(' ');
+			ft_putchar((n2 / 10) + 48);
+			ft_putchar((n2 % 10) + 48);
+			if (n1 != 98)
+				write(1, ", ", 2);
+			n2++;
 		}
-		changeValues(nums[0], nums[1], 0);
+		n1++;
 	}
-}
-
-int main(void)
-{
-	ft_print_comb2();
-	return 0;
 }
