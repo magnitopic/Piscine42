@@ -13,8 +13,6 @@
 
 void	putchar(char text);
 
-void	checker(int x, int y, int i, int j);
-
 void	rush(int x, int y)
 {
 	int	i;
@@ -27,31 +25,17 @@ void	rush(int x, int y)
 		j = 1;
 		while (j <= x)
 		{
-			checker(x, y, i, j);
+			if ((i == 1 && j == 1) || ((y > 1 && x > 1) && (i == y && j == x)))
+				putchar('/');
+			else if ((i == 1 && j == x) || (i == y && j == 1))
+				putchar('\\');
+			else if ((i == 1 || i == y) || (j == 1 || j == x))
+				putchar('*');
+			else
+				putchar(' ');
 			j++;
 		}
 		i++;
 		putchar('\n');
-	}
-}
-
-
-void	checker(int x, int y, int i, int j)
-{
-	if ((i == 1 && j == 1) || ((y > 1 && x > 1) && (i == y && j == x)))
-	{
-		putchar('/');
-	}
-	else if ((i == 1 && j == x) || (i == y && j == 1))
-	{
-		putchar('\\');
-	}
-	else if ((i == 1 || i == y) || (j == 1 || j == x))
-	{
-		putchar('*');
-	}
-	else
-	{
-		putchar(' ');
 	}
 }
