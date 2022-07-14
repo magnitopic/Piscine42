@@ -32,9 +32,3 @@ void	ft_putnbr(int nb)
 	if (nb < 10)
 		ft_putchar(nb + 48);
 }
-
-int	main(void)
-{
-	ft_putnbr(42);
-	return (0);
-}
