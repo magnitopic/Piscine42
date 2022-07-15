@@ -21,8 +21,8 @@ void	ft_putstr(char *str)
 	}
 }
 
-int main(void)
+/*int	main(void)
 {
 	ft_putstr("Hello There");
-	return 0;
-}
+	return (0);
+}*/
