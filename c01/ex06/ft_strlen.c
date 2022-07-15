@@ -10,17 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include <stdio.h>
+
+int ft_strlen(char *str)
 {
 	int counter;
-
 	counter = 0;
-	while ( 
+	while (*str != '\0')
+	{
+		counter++;
+		str++;
+	}
+	return (counter);
 }
 
 int main(void)
 {
-	char s ="Hello World";
-	ft_strlen('A')
+	char *s;
+
+	s = "Hello World";
+	printf("%d",ft_strlen(s));
 	return (0);
 }
