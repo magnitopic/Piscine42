@@ -6,15 +6,16 @@
 /*   By: alaparic <alaparic@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 20:53:25 by alaparic          #+#    #+#             */
-/*   Updated: 2022/07/14 21:22:24 by alaparic         ###   ########.fr       */
+/*   Updated: 2022/07/15 11:04:04 by alaparic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-	int counter;
+	int	counter;
+
 	counter = 0;
 	while (*str != '\0')
 	{
@@ -24,11 +25,11 @@ int ft_strlen(char *str)
 	return (counter);
 }
 
-int main(void)
+/*int	main(void)
 {
-	char *s;
+	char	*s;
 
 	s = "Hello World";
-	printf("%d",ft_strlen(s));
+	printf("%d", ft_strlen(s));
 	return (0);
-}
+}*/
