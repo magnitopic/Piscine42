@@ -13,7 +13,7 @@
 #include <unistd.h>
 #include <stdio.h>
 
-void	print_nums(int nums[], int n)
+void	print_nums(int *nums[], int n)
 {
 	char	letra;
 	int		i;
@@ -21,19 +21,20 @@ void	print_nums(int nums[], int n)
 	i = -1;
 	while (i++ < n - 1)
 	{
-		letra = nums[i] + 48;
-		write(1, &letra, 1);
+		/*letra = nums[i] + 48;
+		write(1, &letra, 1);*/
+		printf("%d", &nums[i]);
 	}
 	write(1, ", ", 2);
 }
 
-void	big_boy(int num, int maxVal, int nums[], int n)
+void	big_boy(int num, int maxVal, int *nums[], int n)
 {
 	while (num <= maxVal)
 	{
 		print_nums(nums, n);
 		num++;
-		big_boy(num, maxVal, nums, n);
+		big_boy(num, maxVal, &nums[0], n);
 	}
 }
 
@@ -53,7 +54,7 @@ void	ft_print_combn(int n)
 	}
 	while (nums[n - 2] < 10 - n)
 	{
-		big_boy(nums[n - 1], 10 - n + n -1, nums, n);
+		big_boy(nums[n - 1], 10 - n + n -1, &nums[0], n);
 		nums[n - 2]++;
 		nums[n - 1] = nums[n - 2] + 1;
 	}
