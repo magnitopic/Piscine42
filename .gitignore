@@ -1,0 +1,6 @@
+.DS_Store
+*.out
+.vscode
+*.swp
+test
+prueba
