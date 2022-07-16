@@ -36,6 +36,7 @@ void	rush(int x, int y)
 			j++;
 		}
 		i++;
-		putchar('\n');
+		if (x > 0)
+			putchar('\n');
 	}
 }
