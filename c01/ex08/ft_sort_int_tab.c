@@ -11,59 +11,40 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
-
-void	move_array(int *tab, int first_num, int num_pos)
-{
-	int	i;
-
-	i = 0;
-	while (tab[i] != first_num)
-	{
-		i++;
-	}
-	while (i > 0)
-	{
-		tab[i] = tab[i - 1];
-		i--;
-	}
-	tab[num_pos] = first_num;
-}
+//#include <stdio.h>
 
 void	ft_sort_int_tab(int *tab, int size)
 {
-	int	i;
-	int	j;
-	int	min;
+	int	aux;
+	int	pos;
 
-	i = 0;
-	while (i < size -1)
+	pos = 0;
+	while (pos < size - 1)
 	{
-		j = 0;
-		min = tab[i];
-		while (j < size - i)
+		if (tab[pos] > tab[pos + 1])
 		{
-			if (tab[i] < min)
-			{
-				min = tab[i];
-			}
-			j++;
+			aux = tab[pos];
+			tab[pos] = tab[pos + 1];
+			tab[pos + 1] = aux;
+			pos = 0;
 		}
-		move_array(tab, min, i);
-		i++;
+		else
+			pos++;
 	}
 }
 
-int	main(void)
+/*int	main(void)
 {
-	int size = 6;
-	int tab[6] = {0, 6, 3, 6, 7, 1};
+	int	tab[1] = {1};
+	int	size = 1;
 	ft_sort_int_tab(tab, size);
-
-	while (size > 0)
+	int pos = 0;
+	while(pos < size)
 	{
-		printf("%d ", tab[size]);
-		size--;
+		printf("%d", tab[pos]);
+		if (pos != size - 1)
+			printf(", ");
+		pos++;
 	}
 	return (0);
-}
+}*/
