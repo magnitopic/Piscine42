@@ -6,18 +6,13 @@
 /*   By: alaparic <alaparic@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 19:50:12 by alaparic          #+#    #+#             */
-/*   Updated: 2022/07/17 19:50:15 by alaparic         ###   ########.fr       */
+/*   Updated: 2022/07/17 21:18:53 by alaparic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
 
-int is_alpha(void)
-{
-	return 0;
-}
-
-int ft_str_is_alpha(char *str)
+int	ft_str_is_alpha(char *str)
 {
 	while (*str != '\0')
 	{
