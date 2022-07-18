@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alaparic <alaparic@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/18 16:18:12 by alaparic          #+#    #+#             */
-/*   Updated: 2022/07/18 16:23:04 by alaparic         ###   ########.fr       */
+/*   Created: 2022/07/18 18:34:07 by alaparic          #+#    #+#             */
+/*   Updated: 2022/07/18 19:09:28 by alaparic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
 
-char	*ft_strupcase(char *str)
+char	ft_strlowcase(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if ((str[i] >= 97 && str[i] <= 122))
+		if ((str[i] >= 65 && str[i] <= 90))
 		{
-			str[i] = str[i] - 32;
+			str[i] = str[i] + 32;
 		}
 		i++;
 	}
 	return (str);
 }
 
-/*int	main(void)
+/*int main(void)
 {
-	char	str[12] = "Hello There";
-	printf("%s", ft_strupcase(str));
+	char	str[37] = "WARNING, WARNING, IMPORTANT MESSAGE!";
+	printf("%s", ft_strlowcase(str));
 	return (0);
 }*/
