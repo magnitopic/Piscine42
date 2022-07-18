@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alaparic <alaparic@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/18 11:28:31 by alaparic          #+#    #+#             */
-/*   Updated: 2022/07/18 11:36:31 by alaparic         ###   ########.fr       */
+/*   Created: 2022/07/18 11:37:36 by alaparic          #+#    #+#             */
+/*   Updated: 2022/07/18 12:13:18 by alaparic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
 
-int	ft_str_is_uppercase(char *str)
+int	ft_str_is_printable(char *str)
 {
 	while (*str != '\0')
 	{
-		if (!(*str >= 65 && *str <= 90))
+		if (!(*str >= 32 && *str <= 126))
 		{
 			return (0);
 		}
@@ -25,10 +25,9 @@ int	ft_str_is_uppercase(char *str)
 	return (1);
 }
 
-/*int	main(void)
+/*int main(void)
 {
-	char	*src = "ABCDEFGHIKLMNOPQRSTUVWXYZ";
-	int	output = ft_str_is_uppercase(src);
+	int	output = ft_str_is_printable("P@ssW0rd");
 	printf("%d", output);
 	return (0);
 }*/
