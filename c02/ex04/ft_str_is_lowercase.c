@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alaparic <alaparic@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/17 21:19:10 by alaparic          #+#    #+#             */
-/*   Updated: 2022/07/18 11:05:44 by alaparic         ###   ########.fr       */
+/*   Created: 2022/07/18 11:15:59 by alaparic          #+#    #+#             */
+/*   Updated: 2022/07/18 11:27:28 by alaparic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 int	ft_str_is_alpha(char *str)
 {
-	if (*str == '-')
-		str++;
 	while (*str != '\0')
 	{
-		if (!(*str >= 48 && *str <= 57))
+		if (!(*str >= 97 && *str <= 122))
 		{
 			return (0);
 		}
@@ -29,7 +27,7 @@ int	ft_str_is_alpha(char *str)
 
 /*int	main(void)
 {
-	char	*src = "-4234";
+	char	*src = "abcdefghijklmnopqrstuvwxyz";
 	int	output=ft_str_is_alpha(src);
 	printf("%d", output);
 	return (0);
