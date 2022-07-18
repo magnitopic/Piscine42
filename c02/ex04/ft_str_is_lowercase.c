@@ -12,7 +12,7 @@
 
 //#include <stdio.h>
 
-int	ft_str_is_alpha(char *str)
+int	ft_str_is_lowercase(char *str)
 {
 	while (*str != '\0')
 	{
@@ -28,7 +28,7 @@ int	ft_str_is_alpha(char *str)
 /*int	main(void)
 {
 	char	*src = "abcdefghijklmnopqrstuvwxyz";
-	int	output=ft_str_is_alpha(src);
+	int	output=ft_str_is_lowercase(src);
 	printf("%d", output);
 	return (0);
 }*/
