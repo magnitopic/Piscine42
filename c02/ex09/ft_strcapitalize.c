@@ -6,11 +6,11 @@
 /*   By: alaparic <alaparic@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 19:12:43 by alaparic          #+#    #+#             */
-/*   Updated: 2022/07/18 19:12:54 by alaparic         ###   ########.fr       */
+/*   Updated: 2022/07/19 10:33:52 by alaparic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+//#include <stdio.h>
 // were gonna use different functions from different files from this module
 
 //control is a bool that is True when currentlly
@@ -20,7 +20,8 @@ int	ft_str_is_alpha(char str)
 {
 	if (!((str >= 65 && str <= 90) || (str >= 97 && str <= 122)))
 	{
-		return (0);
+		if (!(str >= 48 && str <= 57))
+			return (0);
 	}
 	return (1);
 }
@@ -54,21 +55,20 @@ char	*ft_strcapitalize(char *str)
 	{
 		if (!ft_str_is_alpha(str[i]))
 			control = 0;
-		if (!control && ft_str_is_alpha(str[i]))
-		{
-			str[i] = str[i] - 32;
-			control = 1;
-		}
 		if (ft_str_is_alpha(str[i]) && control && ft_str_is_uppercase(str[i]))
 			str[i] = str[i] + 32;
+		if (!control && ft_str_is_alpha(str[i]) && ft_str_is_lowercase(str[i]))
+			str[i] = str[i] - 32;
+		if (!control && ft_str_is_alpha(str[i]))
+			control = 1;
 		i++;
 	}
 	return (str);
 }
 
-int	main(void)
+/*int	main(void)
 {
-	char str[100]="salut, comment tU vas ? 42mots quARANTE-deux; cinquante+et+un";
+	char str[100]="SalUt, Comment tU vas ? 42mots quARANTE-deux; cinquante+et+un";
 	printf("%s", ft_strcapitalize(str));
 	return (0);
-}
+}*/
