@@ -15,8 +15,7 @@
 
 //control is a bool that is True when currentlly
 //in a word and False when outside one
-
-int	ft_str_is_alpha(char str)
+int	ft_str_is_alphanum(char str)
 {
 	if (!((str >= 65 && str <= 90) || (str >= 97 && str <= 122)))
 	{
@@ -26,7 +25,7 @@ int	ft_str_is_alpha(char str)
 	return (1);
 }
 
-int	ft_str_is_lowercase(char str)
+int	ft_str_is_lower(char str)
 {
 	if (!(str >= 97 && str <= 122))
 	{
@@ -35,7 +34,7 @@ int	ft_str_is_lowercase(char str)
 	return (1);
 }
 
-int	ft_str_is_uppercase(char str)
+int	ft_str_is_upper(char str)
 {
 	if (!(str >= 65 && str <= 90))
 	{
@@ -53,13 +52,13 @@ char	*ft_strcapitalize(char *str)
 	control = 0;
 	while (str[i] != '\0')
 	{
-		if (!ft_str_is_alpha(str[i]))
+		if (!ft_str_is_alphanum(str[i]))
 			control = 0;
-		if (ft_str_is_alpha(str[i]) && control && ft_str_is_uppercase(str[i]))
+		if (ft_str_is_alphanum(str[i]) && control && ft_str_is_upper(str[i]))
 			str[i] = str[i] + 32;
-		if (!control && ft_str_is_alpha(str[i]) && ft_str_is_lowercase(str[i]))
+		if (!control && ft_str_is_alphanum(str[i]) && ft_str_is_lower(str[i]))
 			str[i] = str[i] - 32;
-		if (!control && ft_str_is_alpha(str[i]))
+		if (!control && ft_str_is_alphanum(str[i]))
 			control = 1;
 		i++;
 	}
