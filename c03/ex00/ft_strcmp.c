@@ -1,47 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alaparic <alaparic@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/15 11:04:59 by alaparic          #+#    #+#             */
-/*   Updated: 2022/07/15 12:43:07 by alaparic         ###   ########.fr       */
+/*   Created: 2022/07/20 10:29:04 by alaparic          #+#    #+#             */
+/*   Updated: 2022/07/20 13:44:28 by alaparic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
 
-void	ft_rev_int_tab(int *tab, int size)
+int	ft_strcmp(char *s1, char *s2)
 {
-	int	i;
-	int	*rev_array;
-
-	i = 0;
-	while (i <= size - 1)
+	while (*s1 != '\0' && *s2 != '\0')
 	{
-		rev_array[i] = tab[(size - 1) - i];
-		i++;
+		if (!(*s1 == *s2))
+		{
+			return (*s1 - *s2);
+		}
+		s1++;
+		s2++;
 	}
-	i = 0;
-	while (i <= size - 1)
-	{
-		tab[i] = rev_array[i];
-		i++;
-	}
+	return (0);
 }
 
 /*int	main(void)
 {
-	int	i = 0;
-	int	size = 4;
-	int	tab[4] = {0, 1, 1, 6};
+	char	s1[100]= "Hello There";
+	char	s2[100]= "Hello There";
 
-	ft_rev_int_tab(tab, size);
-	while (i <= size - 1)
-	{
-		printf("%d", tab[i]);
-		i++;
-	}
+	printf("%d", ft_strcmp(s1, s2));
 	return (0);
 }*/
