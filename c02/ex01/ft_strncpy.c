@@ -6,7 +6,7 @@
 /*   By: alaparic <alaparic@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 19:18:51 by alaparic          #+#    #+#             */
-/*   Updated: 2022/07/17 19:49:34 by alaparic         ###   ########.fr       */
+/*   Updated: 2022/07/21 17:55:33 by alaparic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,19 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 		dest[i] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
 	return (dest);
 }
 
-/*int	main(void)
+int	main(void)
 {
-	int	n = 5;
-	char			dest[20];
-	char			*src = "Hello There";
-
-	char *output=ft_strncpy(dest, src, n);
-	printf("%s", output);
+	int		n = 8;
+	char	dest[20];
+	char	src[] = "Hello There";
+	printf("%s", ft_strncpy(dest, src, n));
 	return (0);
-}*/
+}
