@@ -30,11 +30,11 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	return (dest);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	int		n = 8;
 	char	dest[20];
 	char	src[] = "Hello There";
 	printf("%s", ft_strncpy(dest, src, n));
 	return (0);
-}
+}*/
