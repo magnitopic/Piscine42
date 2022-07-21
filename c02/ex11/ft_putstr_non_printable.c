@@ -10,40 +10,34 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <unistd.h>
-
-int	ft_str_is_printable(char str)
-{
-	if (!(str >= 32 && str <= 126))
-	{
-		return (0);
-	}
-	return (1);
-}
 
 void	ft_putstr_non_printable(char *str)
 {
+	int		i;
 	char	*c;
 
 	c = "0123456789abcdef";
-	while (*str != '\0')
-	{	
-		if (!ft_str_is_printable(*str))
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] < 32 || str[i] > 126)
 		{
 			write(1, "\\", 1);
-			write(1, &c[*str / 16], 1);
-			write(1, &c[*str % 16], 1);
+			write(1, &c[(unsigned char)str[i] / 16], 1);
+			write(1, &c[(unsigned char)str[i] % 16], 1);
 		}
 		else
-			write(1, &*str, 1);
-		str++;
+			write(1, &str[i], 1);
+		i++;
 	}
 }
 
-/*int main(void)
+int	main(void)
 {
-	char	str[100] = "Coucou\ntu vas\t bien ?";
-	ft_putstr_non_printable(str);
-	return (0);
-}*/
+	ft_putstr_non_printable("Coucou\ntu vas bien ?");
+	write(1, "\n", 1);
+	ft_putstr_non_printable("Couñcou tu vas bie\t\vn");
+	write(1, "\n", 1);
+	ft_putstr_non_printable("");
+}
