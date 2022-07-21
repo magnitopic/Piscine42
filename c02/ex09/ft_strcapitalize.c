@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <stdio.h>
+
 // were gonna use different functions from different files from this module
 
 //control is a bool that is True when currentlly
