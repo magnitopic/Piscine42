@@ -27,7 +27,7 @@ void	ft_rev_int_tab(int *tab, int size)
 	}
 }
 
-int	main(void)
+/*int	main(void)
 {
 	int	i = 0;
 	int	size = 5;
@@ -40,4 +40,4 @@ int	main(void)
 		i++;
 	}
 	return (0);
-}
+}*/
