@@ -29,7 +29,6 @@ void print_params(int argc, char *argv[])
 		write(1, "\n", 1);
 		j++;
 	}
-	return (0);
 }
 
 
@@ -37,17 +36,17 @@ void print_params(int argc, char *argv[])
 
 int	main(int argc, char *argv[])
 {
-	int	aux;
+	char	*aux;
 	int	pos;
 
-	pos = 0;
-	while (pos <  - 1)
+	pos = 1;
+	while (pos < argc - 1)
 	{
-		if (tab[pos] > tab[pos + 1])
+		if (argv[pos][0] > argv[pos + 1][0])
 		{
-			aux = tab[pos];
-			tab[pos] = tab[pos + 1];
-			tab[pos + 1] = aux;
+			aux = argv[pos];
+			argv[pos] = argv[pos + 1];
+			argv[pos + 1] = aux;
 			pos = 0;
 		}
 		else

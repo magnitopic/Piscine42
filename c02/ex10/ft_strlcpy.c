@@ -12,20 +12,33 @@
 
 #include <stdio.h>
 
+unsigned int	big_boy(char *src)
+{
+	int	i;
+
+	i = 0;
+	while (src[i] != '\0')
+		i++;
+	return (i);
+}
+
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
 	unsigned int	i;
+	unsigned int	srd_size;
 
 	i = 0;
-	while (i < size)
+	srd_size = big_boy(dest);
+	if (size != 0)
 	{
-		*dest = *src;
-		dest++;
-		src++;
-		i++;
+		while (i < size - 1 && src[i] != '\0')
+		{
+			dest[i] = src[i];
+			i++;
+		}
+		dest[i] = '\0';
 	}
-	*dest = '\0';
-	return (size);
+	return (srd_size);
 }
 
 /*int	main(void)
