@@ -10,32 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <stdio.h>
 
 void	ft_rev_int_tab(int *tab, int size)
 {
 	int	i;
-	int	*rev_array;
+	int	aux;
 
 	i = 0;
-	while (i <= size - 1)
+	while (i < size - 1)
 	{
-		rev_array[i] = tab[(size - 1) - i];
-		i++;
-	}
-	i = 0;
-	while (i <= size - 1)
-	{
-		tab[i] = rev_array[i];
+		aux = tab[i];
+		tab[i] = tab[size - 1 - i];
+		tab[size - 1 - i] = aux;
 		i++;
 	}
 }
 
-/*int	main(void)
+int	main(void)
 {
 	int	i = 0;
-	int	size = 4;
-	int	tab[4] = {0, 1, 1, 6};
+	int	size = 5;
+	int	tab[] = {0, 1, 1, 6, 8};
 
 	ft_rev_int_tab(tab, size);
 	while (i <= size - 1)
@@ -44,4 +40,4 @@ void	ft_rev_int_tab(int *tab, int size)
 		i++;
 	}
 	return (0);
-}*/
+}
