@@ -41,7 +41,7 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	return (srd_size);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	char dest[100];
 	char src[100]="I'm in hello";
@@ -49,4 +49,4 @@ int	main(void)
 	printf("%d", ft_strlcpy(dest, src, size));
 	printf("\n%s", dest);
 	return (0);
-}
+}*/
