@@ -12,9 +12,9 @@
 
 char	*ft_strstr(char *str, char *to_find)
 {
-	int	i;
-	int	f;
-	char *aux;
+	int		i;
+	int		f;
+	char	*aux;
 
 	i = 0;
 	if (to_find[i] == '\0')
@@ -29,7 +29,6 @@ char	*ft_strstr(char *str, char *to_find)
 			aux = cut_str(str + i);
 			return (aux);
 		}
-			
 		i++;
 	}
 	return ("");
@@ -38,8 +37,8 @@ char	*ft_strstr(char *str, char *to_find)
 char *cut_str(char *str)
 {
 	char *aux = (char*)malloc(80*sizeof(char));
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;

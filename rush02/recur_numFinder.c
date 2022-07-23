@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   recur_numFinder.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alaparic <alaparic@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/23 11:58:50 by alaparic          #+#    #+#             */
-/*   Updated: 2022/07/23 11:58:52 by alaparic         ###   ########.fr       */
+/*   Created: 2022/07/23 18:21:44 by alaparic          #+#    #+#             */
+/*   Updated: 2022/07/23 18:21:45 by alaparic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
-
-int	main(int argc, char *argv[])
+char	recur_num_finder(int num)
 {
-	int file;
-	char buffer[BUFFER_SIZE];
-	int bytes = 0; 
-	char *prueba;
-	// char num;
-	// char ruta;
-
-	file = open("numbers.dict", O_RDONLY);
-
-	while ((bytes = read(file, buffer, BUFFER_SIZE)) > 0)
-	{
-		//write(1, buffer, bytes);
-		if (argc == 2)
-		{
-			prueba = ft_strstr(buffer, argv[1]);
-		}
-		// else if (argc == 3)
-		// 	argv[2]
-	}
-	return (0);
+	int num_len;
+	
 }
+
+void	get_tousands(int *num)
+{
+	int	small_num;
+
+	small_num = *num % 1000;
+	while (*num !=)
+		get_tousands():
+}
+
+int main(void)
+{
+    return(0);
+}
+
+/*
+func1 --> Loockup the word of the number (int *char)
+
+func2 --> separar valores de centesimas (int void)
+
+func3 --> hace recursión
+*/
