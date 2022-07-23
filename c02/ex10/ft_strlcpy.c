@@ -12,7 +12,7 @@
 
 #include <stdio.h>
 
-unsigned int	big_boy(char *src)
+unsigned int	get_str_size(char *src)
 {
 	int	i;
 
@@ -28,7 +28,7 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	unsigned int	srd_size;
 
 	i = 0;
-	srd_size = big_boy(dest);
+	srd_size = get_str_size(src);
 	if (size != 0)
 	{
 		while (i < size - 1 && src[i] != '\0')
@@ -41,7 +41,7 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	return (srd_size);
 }
 
-/*int	main(void)
+int	main(void)
 {
 	char dest[100];
 	char src[100]="I'm in hello";
@@ -49,4 +49,4 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	printf("%d", ft_strlcpy(dest, src, size));
 	printf("\n%s", dest);
 	return (0);
-}*/
+}
