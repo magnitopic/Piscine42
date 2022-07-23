@@ -34,19 +34,22 @@ void print_params(int argc, char *argv[])
 int	main(int argc, char *argv[])
 {
 	char	*aux;
-	int	pos;
+	int		pos;
+	int		i;
 
 	pos = 1;
 	while (pos < argc - 1)
 	{
-		if (argv[pos][0] > argv[pos + 1][0])
+		i = 0;
+		while (argv[pos][i] == argv[pos + 1][i])
+			i++;
+		if (argv[pos][i] > argv[pos + 1][i])
 		{
 			aux = argv[pos];
 			argv[pos] = argv[pos + 1];
 			argv[pos + 1] = aux;
 			pos = 0;
 		}
-		if (argv[pos][0] == argv[pos + 1][0])
 		else
 			pos++;
 	}
