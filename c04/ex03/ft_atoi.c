@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alaparic <alaparic@student.42madrid>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/23 15:24:39 by alaparic          #+#    #+#             */
+/*   Updated: 2022/07/23 15:24:45 by alaparic         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 
-int ft_atoi(char *str)
+int	ft_atoi(char *str)
 {
-	int control;
+	int	control;
 	int	symbol;
-	int number;
+	int	number;
 
 	symbol = 0;
 	control = 0;
@@ -15,20 +27,20 @@ int ft_atoi(char *str)
 			symbol++;
 		if (*str >= '0' && *str <= '9' && !control)
 		{
-			if (symbol%2==1)
+			if (symbol % 2 == 1)
 				number *= symbol;
 			control = 1;
 		}
 		if (control && (*str >= '0' && *str <= '9'))
 			number = 10 * number + *str - '0';
 		if (control && !(*str >= '0' && *str <= '9'))
-			break;
+			break ;
 		str++;
 	}
 	return (number);
 }
 
-/*int main(void)
+/*int	main(void)
 {
 	printf("%d", ft_atoi(" ---+--+1234ab567"));
 	return (0);
