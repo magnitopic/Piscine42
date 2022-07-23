@@ -31,9 +31,6 @@ void print_params(int argc, char *argv[])
 	}
 }
 
-
-
-
 int	main(int argc, char *argv[])
 {
 	char	*aux;
@@ -49,6 +46,7 @@ int	main(int argc, char *argv[])
 			argv[pos + 1] = aux;
 			pos = 0;
 		}
+		if (argv[pos][0] == argv[pos + 1][0])
 		else
 			pos++;
 	}
