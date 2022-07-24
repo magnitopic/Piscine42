@@ -6,13 +6,13 @@
 /*   By: alaparic <alaparic@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 19:39:57 by alaparic          #+#    #+#             */
-/*   Updated: 2022/07/21 19:39:59 by alaparic         ###   ########.fr       */
+/*   Updated: 2022/07/24 12:03:11 by alaparic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void print_params(int argc, char *argv[])
+void	print_params(int argc, char *argv[])
 {
 	int	i;
 	int	j;
