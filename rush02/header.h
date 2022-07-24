@@ -15,6 +15,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char	*ft_strstr(char *str, char *to_find);
-char	*cut_str(char *str);
-int		gestion_rutas(int argc, char **argv, char **num, char **ruta);
+char	*search_char(char *str, char *to_find);
+int		is_character(char letter);
+int		is_number(char letter);
+int		str_len(char *str);
+char	*cut_str(char *str, int size);

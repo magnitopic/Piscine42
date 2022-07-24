@@ -12,7 +12,7 @@
 
 #include "header.h"
 
-char	*ft_strstr(char *str, char *to_find)
+char	*search_char(char *str, char *to_find)
 {
 	int		i;
 	int		f;
@@ -32,7 +32,7 @@ char	*ft_strstr(char *str, char *to_find)
 		{
 			if (to_find[f] == '\0')
 			{
-				tam = ft_str_length(str + i);
+				tam = str_len(str + i);
 				aux = cut_str((str + i), tam);
 				return (aux);
 			}
@@ -40,64 +40,4 @@ char	*ft_strstr(char *str, char *to_find)
 		i++;
 	}
 	return ("-1");
-}
-
-int	is_character(char letter)
-{
-	if (letter >= '!' && letter <= 126)
-		return (1);
-	return (0);
-}
-
-int	is_number(char letter)
-{
-	if (letter >= '0' && letter <= '9')
-		return (1);
-	return (0);
-}
-
-int	ft_str_length(char *str)
-{
-	int	size;
-	int	i;
-
-	i = 0;
-	size = 0;
-	while (str[i] != ':')
-		i++;
-	i++;
-	while (is_character(str[i]) == 0)
-		i++;
-	while (str[i] != '\n')
-	{
-		size++;
-		i++;
-	}
-	return (size);
-}
-
-char	*cut_str(char *str, int size)
-{
-	int		i;
-	char	*aux = (char*)malloc((size + 1)*sizeof(char));
-	int		cont_aux;
-
-	i = 0;
-	cont_aux = 0;
-	while (str[i] != ':')
-		i++;
-	i++;
-	while (is_character(str[i]) == 0)
-		i++;
-	while (str[i] != '\n')
-	{
-		aux[cont_aux] = str[i];
-		cont_aux++;
-		i++;
-	}
-
-	aux[cont_aux] = 0;
-	printf("%s\n", aux);
-	free(aux);
-	return (aux);
 }

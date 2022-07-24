@@ -24,11 +24,14 @@ int	main(int argc, char *argv[])
 	else if (argc == 2)
 		file = open("numbers.dict", O_RDONLY);
 	else
-		return (-1);
-	bytes = read(file, buffer, 2048);
-	while (bytes > 0)
 	{
-		prueba = ft_strstr(buffer, argv[1]);
+		write(1, "Error\n", 6);
+		return (-1);
+	}
+	bytes = read(file, buffer, 2048);
+	if (bytes > 0)
+	{
+		prueba = search_char(buffer, argv[1]);
 	}
 	return (0);
 }
