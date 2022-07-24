@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
 
 char	*ft_strcat(char *dest, char *src)
 {
@@ -35,7 +36,9 @@ char	*ft_strcat(char *dest, char *src)
 {
 	char	src[20] = "There";
 	char	dest[20] = "Hello ";
-	ft_strcat(dest, src);
-	printf("%s", dest);
+	char	src2[20] = "There";
+	char	dest2[20] = "Hello ";
+	printf("%s", ft_strcat(dest, src));
+	printf("\n%s", strcat(dest2, src2));
 	return (0);
 }*/

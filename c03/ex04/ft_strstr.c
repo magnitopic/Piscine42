@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <stdio.h>
+#include <string.h>
 
 int	compare_str(char *str, char *to_find)
 {
@@ -30,24 +31,30 @@ int	compare_str(char *str, char *to_find)
 
 char	*ft_strstr(char *str, char *to_find)
 {
+	char *a;
+
+	a="";
+	if (*to_find == *a)
+		return (str);
 	while (*str != '\0')
 	{
 		if (*str == *to_find)
 		{
 			if (compare_str(str, to_find))
 			{
-				return (to_find);
+				return (str);
 			}
 		}
 		str++;
 	}
-	return ("\0");
+	return (NULL);
 }
 
 /*int	main(void)
 {
 	char	str[20] = "Magnitopic";
-	char	to_find[20] = "Mag";
+	char	to_find[20] ="";
 	printf("%s", ft_strstr(str, to_find));
+	printf("\n%s", strstr(str, to_find));
 	return (0);
 }*/

@@ -11,11 +11,12 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	int	i;
-	int	j;
+	unsigned int	j;
 
 	i = 0;
 	while (dest[i] != '\0')
@@ -35,7 +36,9 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	char	src[20] = "There";
 	char	dest[20] = "Hello ";
-	ft_strncat(dest, src, 3);
-	printf("%s", dest);
+	char	src2[20] = "There";
+	char	dest2[20] = "Hello ";
+	printf("%s", ft_strncat(dest, src, 3));
+	printf("\n%s", strncat(dest2, src2, 3));
 	return (0);
 }*/
