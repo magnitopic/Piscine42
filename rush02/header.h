@@ -20,3 +20,4 @@ int		is_character(char letter);
 int		is_number(char letter);
 int		str_len(char *str);
 char	*cut_str(char *str, int size);
+void    ft_putchar(char *str);

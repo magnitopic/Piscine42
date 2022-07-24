@@ -65,9 +65,20 @@ char	*cut_str(char *str, int size)
 		cont_aux++;
 		i++;
 	}
-
 	aux[cont_aux] = 0;
-	printf("%s\n", aux);
+	ft_putchar(aux);
 	free(aux);
 	return (aux);
+}
+
+void	ft_putchar(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
 }
