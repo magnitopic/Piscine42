@@ -8,7 +8,7 @@ Tres funciones grandes para completar el Rush.
 -	Acceptar diferentes formatos de archivos .dict
 -	Poder recibir parametros int y busccar sus valores en el .dict
 
-## 2. num_split
+##	2. num_split
 
 -	Recibir numero de tres cifras
 -	Separar ese numero en decenas centenas y unidades
