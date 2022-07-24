@@ -6,17 +6,21 @@
 /*   By: alaparic <alaparic@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 16:54:42 by alaparic          #+#    #+#             */
-/*   Updated: 2022/07/23 16:54:43 by alaparic         ###   ########.fr       */
+/*   Updated: 2022/07/24 19:04:45 by alaparic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "header.h"
 
 char	*ft_strstr(char *str, char *to_find)
 {
 	int		i;
 	int		f;
+	int		tam;
 	char	*aux;
 
 	i = 0;
+	tam = 0;
 	if (to_find[i] == '\0')
 		return (str);
 	while (str[i] != '\0')
@@ -24,34 +28,76 @@ char	*ft_strstr(char *str, char *to_find)
 		f = 0;
 		while (to_find[f] == str[f + i] && to_find[f] != '\0')
 			f++;
-		if (to_find[f] == '\0')
+		if (is_number(str[f + i]) == 0)
 		{
-			aux = cut_str(str + i);
-			return (aux);
+			if (to_find[f] == '\0')
+			{
+				tam = ft_str_length(str + i);
+				aux = cut_str((str + i), tam);
+				return (aux);
+			}
 		}
 		i++;
 	}
-	return ("");
+	return ("-1");
 }
 
-char *cut_str(char *str)
+int	is_character(char letter)
 {
-	char *aux = (char*)malloc(80 * sizeof(char));
+	if (letter >= '!' && letter <= 126)
+		return (1);
+	return (0);
+}
+
+int	is_number(char letter)
+{
+	if (letter >= '0' && letter <= '9')
+		return (1);
+	return (0);
+}
+
+int	ft_str_length(char *str)
+{
+	int	size;
 	int	i;
-	int	j;
 
 	i = 0;
-	j = 0;
+	size = 0;
+	while (str[i] != ':')
+		i++;
+	i++;
+	while (is_character(str[i]) == 0)
+		i++;
 	while (str[i] != '\n')
 	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-		{
-			aux[j] = str[i];
-			write(1, &str[i], 1);
-		}	
+		size++;
 		i++;
-		j++;
 	}
-	printf("%s", aux);
+	return (size);
+}
+
+char	*cut_str(char *str, int size)
+{
+	int		i;
+	char	*aux = (char*)malloc((size + 1)*sizeof(char));
+	int		cont_aux;
+
+	i = 0;
+	cont_aux = 0;
+	while (str[i] != ':')
+		i++;
+	i++;
+	while (is_character(str[i]) == 0)
+		i++;
+	while (str[i] != '\n')
+	{
+		aux[cont_aux] = str[i];
+		cont_aux++;
+		i++;
+	}
+
+	aux[cont_aux] = 0;
+	printf("%s\n", aux);
+	free(aux);
 	return (aux);
 }

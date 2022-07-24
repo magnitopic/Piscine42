@@ -14,20 +14,21 @@
 
 int	main(int argc, char *argv[])
 {
-	int file;
-	char buffer[2048];
-	int bytes = 0; 
-	char *prueba;
+	int		file;
+	char	buffer[2048];
+	int		bytes;
+	char	*prueba;
 
-	file = open("numbers.dict", O_RDONLY);
-	while ((bytes = read(file, buffer, 2048)) > 0)
+	if (argc == 3)
+		file = open(argv[2], O_RDONLY);
+	else if (argc == 2)
+		file = open("numbers.dict", O_RDONLY);
+	else
+		return (-1);
+	bytes = read(file, buffer, 2048);
+	while (bytes > 0)
 	{
-		if (argc == 2)
-		{
-			prueba = ft_strstr(buffer, argv[1]);
-		}
-		// else if (argc == 3)
-		// 	argv[2]
+		prueba = ft_strstr(buffer, argv[1]);
 	}
 	return (0);
 }
