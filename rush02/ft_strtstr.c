@@ -36,7 +36,7 @@ char	*ft_strstr(char *str, char *to_find)
 
 char *cut_str(char *str)
 {
-	char *aux = (char*)malloc(80*sizeof(char));
+	char *aux = (char*)malloc(80 * sizeof(char));
 	int	i;
 	int	j;
 
@@ -53,5 +53,5 @@ char *cut_str(char *str)
 		j++;
 	}
 	printf("%s", aux);
-	return aux;
+	return (aux);
 }

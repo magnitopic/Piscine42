@@ -15,17 +15,13 @@
 int	main(int argc, char *argv[])
 {
 	int file;
-	char buffer[BUFFER_SIZE];
+	char buffer[2048];
 	int bytes = 0; 
 	char *prueba;
-	// char num;
-	// char ruta;
 
 	file = open("numbers.dict", O_RDONLY);
-
-	while ((bytes = read(file, buffer, BUFFER_SIZE)) > 0)
+	while ((bytes = read(file, buffer, 2048)) > 0)
 	{
-		//write(1, buffer, bytes);
 		if (argc == 2)
 		{
 			prueba = ft_strstr(buffer, argv[1]);
