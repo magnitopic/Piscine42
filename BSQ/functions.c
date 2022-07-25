@@ -12,6 +12,7 @@ void	print_natrix(char **mat)
 		while (mat[i][j] == '\0')
 		{
 			write(1, &mat[i][j], 1);
+			j++;
 		}
 		i++;
 	}
