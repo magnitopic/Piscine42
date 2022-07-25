@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alaparic <alaparic@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/20 13:45:44 by alaparic          #+#    #+#             */
-/*   Updated: 2022/07/20 14:57:01 by alaparic         ###   ########.fr       */
+/*   Created: 2022/07/25 09:14:44 by alaparic          #+#    #+#             */
+/*   Updated: 2022/07/25 14:02:33 by alaparic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include <stdio.h>
-#include <string.h>
+#include <limits.h>
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+void	ft_putnbr(int nb)
 {
-	unsigned int	i;
+	char	num;
 
-	i = 0;
-	while (i < n - 1 && *s1 && *s2 && *s1 == *s2)
+	while (nb > 0)
 	{
-		s1++;
-		s2++;
-		i++;
+		num = (nb % 10) + '0';
+		write(1, &num, 1);
+		nb = (nb / 10);
 	}
-	return ((unsigned char)*s1 - (unsigned char)*s2);
 }
 
-/*int	main(void)
+int main(void)
 {
-	char	s1[] = "Hello There";
-	char	s2[] = "Hello There";
-
-	printf("%d", ft_strncmp(s1, s2, 5));
-	printf("\n%d", strncmp(s1, s2, 5));
+	ft_putnbr(INT_MIN);
+	printf("\n%i", INT_MAX);
 	return (0);
-}*/
+}

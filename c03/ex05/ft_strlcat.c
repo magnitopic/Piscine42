@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
@@ -21,7 +22,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	while (dest[i] != '\0')
 		i++;
 	j = 0;
-	while (src[j] != '\0')
+	while (src[j] != '\0' && i < size - 1)
 	{
 		dest[i] = src[j];
 		j++;
@@ -31,11 +32,15 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	return (i);
 }
 
-/*int	main(void)
+int	main(void)
 {
 	char	src[20] = "There";
 	char	dest[20] = "Hello ";
+	char	src2[20] = "There";
+	char	dest2[20] = "Hello ";
 	printf("%d", ft_strlcat(dest, src, 5));
 	printf("\n%s", dest);
+	printf("\n%lu", strlcat(dest2, src2, 5));
+	printf("\n%s", dest2);
 	return (0);
-}*/
+}
