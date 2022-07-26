@@ -13,47 +13,31 @@
 #include <stdio.h>
 #include <string.h>
 
-int	compare_str(char *str, char *to_find)
-{
-	int	i;
-
-	i = 0;
-	while (to_find[i] != '\0')
-	{
-		if (str[i] != to_find[i])
-		{
-			return (0);
-		}
-		i++;
-	}
-	return (1);
-}
-
 char	*ft_strstr(char *str, char *to_find)
 {
-	char *a;
+	int	c;
+	int	c_aux;
 
-	a="";
-	if (*to_find == *a)
+	c = 0;
+	c_aux = 0;
+	if (to_find[0] == '\0')
 		return (str);
-	while (*str != '\0')
+	while (str[c] != '\0')
 	{
-		if (*str == *to_find)
-		{
-			if (compare_str(str, to_find))
-			{
-				return (str);
-			}
-		}
-		str++;
+		while (str[c + c_aux] == to_find[c_aux] && str[c + c_aux] != '\0')
+			c_aux++;
+		if (to_find[c_aux] == '\0')
+			return (str + c);
+		c++;
+		c_aux = 0;
 	}
-	return (NULL);
+	return (0);
 }
 
 /*int	main(void)
 {
 	char	str[20] = "Magnitopic";
-	char	to_find[20] ="";
+	char	to_find[20] ="i";
 	printf("%s", ft_strstr(str, to_find));
 	printf("\n%s", strstr(str, to_find));
 	return (0);

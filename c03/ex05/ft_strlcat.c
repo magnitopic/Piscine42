@@ -32,7 +32,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	return (i);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	char	src[20] = "There";
 	char	dest[20] = "Hello ";
@@ -43,4 +43,4 @@ int	main(void)
 	printf("\n%lu", strlcat(dest2, src2, 5));
 	printf("\n%s", dest2);
 	return (0);
-}
+}*/
