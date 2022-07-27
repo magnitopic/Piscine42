@@ -12,36 +12,44 @@
 
 #include <stdio.h>
 
-int	ft_atoi(char *str)
+int	is_space(char c)
 {
-	int	control;
-	int	symbol;
-	int	number;
-
-	symbol = 0;
-	control = 0;
-	number = 0;
-	while (str)
-	{
-		if (!control && *str == '-')
-			symbol++;
-		if (*str >= '0' && *str <= '9' && !control)
-		{
-			if (symbol % 2 == 1)
-				number *= symbol;
-			control = 1;
-		}
-		if (control && (*str >= '0' && *str <= '9'))
-			number = 10 * number + *str - '0';
-		if (control && !(*str >= '0' && *str <= '9'))
-			break ;
-		str++;
-	}
-	return (number);
+	if ((c > 8 && c < 14) || c == 32)
+		return (1);
+	return (0);
 }
 
-/*int	main(void)
+int	ft_atoi(char *str)
 {
-	printf("%d", ft_atoi(" ---+--+1234ab567"));
+	int		sign;
+	int		i;
+	int		num;
+
+	i = 0;
+	sign = 1;
+	num = 0;
+	while (is_space(str[i]) == 1)
+		i++;
+	while (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sign *= -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9' && str[i] != '\0')
+	{
+		num = num * 10 + str[i] - '0';
+		i++;
+	}
+	return (sign * num);
+}
+
+int	main(void)
+{
+	printf("%d\n", ft_atoi(" ---+--+1234ab567"));
+	printf("%d\n", ft_atoi(" -\t-+--+1234ab567"));
+	printf("%d\n", ft_atoi("   \t   +----+-+1234ab5"));
+	printf("%d\n", ft_atoi("	  +--\t--+-+1234ab5"));
+	printf("%d\n", ft_atoi("	  +----+-+1\t234ab5"));
 	return (0);
-}*/
+}
