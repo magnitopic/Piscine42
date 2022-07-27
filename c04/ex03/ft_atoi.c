@@ -44,7 +44,7 @@ int	ft_atoi(char *str)
 	return (sign * num);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	printf("%d\n", ft_atoi(" ---+--+1234ab567"));
 	printf("%d\n", ft_atoi(" -\t-+--+1234ab567"));
@@ -52,4 +52,4 @@ int	main(void)
 	printf("%d\n", ft_atoi("	  +--\t--+-+1234ab5"));
 	printf("%d\n", ft_atoi("	  +----+-+1\t234ab5"));
 	return (0);
-}
+}*/
