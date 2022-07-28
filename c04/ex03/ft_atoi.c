@@ -28,7 +28,7 @@ int	ft_atoi(char *str)
 	i = 0;
 	sign = 1;
 	num = 0;
-	while (is_space(str[i]) == 1)
+	while (is_space(str[i]))
 		i++;
 	while (str[i] == '-' || str[i] == '+')
 	{
@@ -48,8 +48,9 @@ int	ft_atoi(char *str)
 {
 	printf("%d\n", ft_atoi(" ---+--+1234ab567"));
 	printf("%d\n", ft_atoi(" -\t-+--+1234ab567"));
-	printf("%d\n", ft_atoi("   \t   +----+-+1234ab5"));
-	printf("%d\n", ft_atoi("	  +--\t--+-+1234ab5"));
+	printf("%d\n", ft_atoi("   \t   +---+-+1234ab5"));
+	printf("%d\n", ft_atoi("	  +----+-+\t1234ab5"));
 	printf("%d\n", ft_atoi("	  +----+-+1\t234ab5"));
+	printf("%d\n", ft_atoi("5"));
 	return (0);
 }*/
