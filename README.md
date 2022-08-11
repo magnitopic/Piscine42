@@ -3,5 +3,5 @@
 ## Run C files 
 
 ```
-gcc file.c -o test && ./test
+gcc -Wall -Wextra -Werror file.c -o test && ./test
 ```
