@@ -6,7 +6,7 @@
 /*   By: alaparic <alaparic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 13:20:35 by alaparic          #+#    #+#             */
-/*   Updated: 2023/07/23 13:29:01 by alaparic         ###   ########.fr       */
+/*   Updated: 2023/07/23 21:49:03 by alaparic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ int	ft_recursive_factorial(int nb)
 
 int	main(void)
 {
-	printf("%d\n", ft_recursive_factorial(-1));
+	printf("%d\n", ft_recursive_factorial(5));
 	return (0);
 }
